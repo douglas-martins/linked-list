@@ -198,7 +198,7 @@ public class LinkedList<T> {
         }
 
         if (this.head == null) {
-            System.out.println("]");
+            System.out.print("]");
         }
 
         System.out.println();

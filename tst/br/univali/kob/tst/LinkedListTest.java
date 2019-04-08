@@ -8,6 +8,7 @@ public class LinkedListTest {
     public static void main(String[] args) {
         LinkedListTest linkedListTest = new LinkedListTest();
 
+        System.out.println("########## LINKED LIST FEATURES TEST ##########");
 
         linkedListTest.insertTest();
 
@@ -35,6 +36,11 @@ public class LinkedListTest {
         System.out.println();
 
         linkedListTest.emptyTest();
+
+        System.out.println();
+        System.out.println();
+
+        System.out.println("########## LINKED LIST FEATURES TEST ##########");
 
     }
 
