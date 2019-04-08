@@ -13,6 +13,27 @@ public class LinkedList<T> {
     private Node head;
 
     /**
+     * Tail of the linked list.
+     */
+    private Node tail;
+
+    /**
+     * Get for head reference.
+     * @return Node with the head reference.
+     */
+    public Node getHead() {
+        return this.head;
+    }
+
+    /**
+     * Get for tail reference.
+     * @return Node with the tail reference.
+     */
+    public Node getTail() {
+        return this.tail;
+    }
+
+    /**
      * Insert object on the list.
      * @param data: the object that will be inserted.
      */
@@ -31,6 +52,8 @@ public class LinkedList<T> {
             }
 
             lastNode.setNext(newNode);
+
+            this.tail = lastNode;
         }
     }
 
@@ -68,6 +91,8 @@ public class LinkedList<T> {
             System.out.println(key + " founded and deleted.");
             return;
         }
+
+        this.tail = previousNode;
 
         // CASE 3: The key is not present
         if (currentNode == null) {
@@ -113,6 +138,8 @@ public class LinkedList<T> {
                 counter++;
             }
         }
+
+        this.tail = previousNode;
 
         // If the position element was found, it should be at currNode
         // Therefore the currNode shall not be null
