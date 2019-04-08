@@ -38,7 +38,7 @@ public class LinkedList<T> {
      * Delete the linked list object with key.
      * @param key: key of the object that will be deleted.
      */
-    public void delete(T key) {
+    public void deleteByKey(T key) {
         Node currentNode = this.head;
         Node previousNode = null;
 
@@ -79,7 +79,7 @@ public class LinkedList<T> {
      * Delete the linked list object in the position given.
      * @param index: the position of object that will be deleted.
      */
-    public void delete(int index) {
+    public void deleteByIndex(int index) {
         Node currentNode = this.head;
         Node previousNode = null;
 
@@ -126,6 +126,56 @@ public class LinkedList<T> {
     }
 
     /**
+     * Get the number o elements on the linked list.
+     * @return int with the value of elements in the linked list
+     */
+    public int size() {
+        Node currentNode = this.head;
+        int counter = 0;
+
+        if (isEmpty()) {
+            return counter;
+        }
+
+        while (currentNode != null) {
+            currentNode = currentNode.getNext();
+            counter++;
+        }
+
+        return counter;
+    }
+
+    /**
+     * Verify if the element contains inside the linked list
+     * @param obj: the obj that will be search on the list
+     * @return boolean if the obj contains return true else false
+     */
+    public boolean isInside(T obj) {
+        Node currentNode = this.head;
+
+        if (currentNode != null && currentNode.getData().equals(obj)) {
+            return true;
+        }
+
+        while (currentNode != null) {
+            if (currentNode.getData().equals(obj)) {
+                return true;
+            }
+            currentNode = currentNode.getNext();
+        }
+
+        return false;
+    }
+
+    /**
+     * Check if the linked list is empty.
+     * @return boolean with the value of head linked list status.
+     */
+    public boolean isEmpty () {
+        return this.head == null;
+    }
+
+    /**
      * Print the linked list.
      */
     public void print() {
@@ -146,6 +196,11 @@ public class LinkedList<T> {
                 System.out.print("]");
             }
         }
+
+        if (this.head == null) {
+            System.out.println("]");
+        }
+
         System.out.println();
     }
 
